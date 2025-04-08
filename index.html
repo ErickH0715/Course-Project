@@ -1,105 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strait Coffee</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strait Coffee</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Base Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5dc;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #6ab0c7;
+      padding: 20px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 10px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .container {
+      width: 70%;
+      margin: auto;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      padding: 30px;
+    }
+    img {
+      max-width: 50%;
+      border: 5px solid white;
+      margin: 20px;
+    }
+    .text {
+      flex: 1;
+      text-align: left;
+    }
+    .hidden {
+      display: none;
+    }
+    footer {
+      background-color: #6ab0c7;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    /* Tablet view (max-width: 1200px) */
+    @media (max-width: 1200px) {
+      body {
+        background-color: #f0f0f0;
+      }
+      header {
+        background-color: #7bbad9;
+      }
+      footer {
+        background-color: #7bbad9;
+      }
+      .container {
+        width: 90%;
+      }
+    }
+
+    /* Phone view (max-width: 800px) */
+    @media (max-width: 800px) {
+      body {
+        background-color: #e0e0e0;
+      }
+      header,
+      footer {
+        background-color: #8ec0d1;
+      }
+      .container {
+        flex-direction: column;
+        width: 100%;
+        padding: 15px;
+      }
+      img {
+        max-width: 100%;
+        margin: 10px auto;
+      }
+      nav ul li {
+        display: block;
+        margin: 5px 0;
+      }
+      .text {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="https://github.com/ErickH0715/Course-Project/blob/main/logo.png?raw=true" alt="Strait Coffee Logo" style="height: 80px;">
-        <h1>Strait Coffee</h1>
-        <nav>
-            <ul>
-                <li><a href="#" onclick="navigate('home')">Home</a></li>
-                <li><a href="#" onclick="navigate('contact')">Contact</a></li>
-                <li><a href="#" onclick="navigate('menu')">Menu</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main id="content">
-        <section id="home" class="page">
-            <div class="container">
-                <img src="https://github.com/ErickH0715/Course-Project/blob/main/barista.jpg?raw=true" alt="Barista preparing coffee">
-                <div class="text">
-                    <p>Once upon a time in 1996 we opened a small café and roastery. After many years of
-                    serving our fine coffees from around the world...we grew out of our small space and we
-                    realized we needed more room with which to bake, and cook and serve our many loyal
-                    and new customers.</p>
-                    <p>After a few diversions, illusions and contusions, we acquired our larger space on the corner
-                    of Wilson Creek Plaza. Our café features all the coffees that we roast. We serve amazing
-                    fresh, made to order food, and delicious baked goods, made from scratch.</p>
-                </div>
-            </div>
-        </section>
-        <section id="contact" class="page hidden">
-            <h2>Contact Us</h2>
-            <p>Email: info@straitcoffee.com</p>
-        </section>
-        <section id="menu" class="page hidden">
-            <h2>Our Menu</h2>
-            <p>Explore our delicious offerings.</p>
-        </section>
-    </main>
-    <footer>
-        <p>Created by Yin Maung</p>
-    </footer>
-    <script>
-        function navigate(page) {
-            document.querySelectorAll('.page').forEach(section => {
-                section.classList.add('hidden');
-            });
-            document.getElementById(page).classList.remove('hidden');
-        }
-    </script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5dc;
-            text-align: center;
-        }
-        header {
-            background-color: #6ab0c7;
-            padding: 20px;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-        }
-        .container {
-            width: 70%;
-            margin: auto;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            padding: 30px;
-        }
-        img {
-            max-width: 50%;
-            border: 5px solid white;
-            margin: 20px;
-        }
-        .text {
-            flex: 1;
-        }
-        .hidden {
-            display: none;
-        }
-        footer {
-            background-color: #6ab0c7;
-            padding: 10px;
-            margin-top: 20px;
-        }
-    </style>
+  <header>
+    <img src="https://github.com/ErickH0715/Course-Project/blob/main/logo.png?raw=true" alt="Strait Coffee Logo" style="height: 80px;" />
+    <h1>Strait Coffee</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="navigate('home')">Home</a></li>
+        <li><a href="#" onclick="navigate('contact')">Contact</a></li>
+        <li><a href="#" onclick="navigate('menu')">Menu</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="content">
+    <section id="home" class="page">
+      <div class="container">
+        <img src="https://github.com/ErickH0715/Course-Project/blob/main/barista.jpg?raw=true" alt="Barista preparing coffee" />
+        <div class="text">
+          <p>
+            Once upon a time in 1996 we opened a small café and roastery. After many years of serving our fine coffees from around the world...we grew out of our small space and we realized we needed more room with which to bake, and cook and serve our many loyal and new customers.
+          </p>
+          <p>
+            After a few diversions, illusions and contusions, we acquired our larger space on the corner of Wilson Creek Plaza. Our café features all the coffees that we roast. We serve amazing fresh, made to order food, and delicious baked goods, made from scratch.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="page hidden">
+      <h2>Contact Us</h2>
+      <p>Email: info@straitcoffee.com</p>
+    </section>
+    <section id="menu" class="page hidden">
+      <h2>Our Menu</h2>
+      <p>Explore our delicious offerings.</p>
+    </section>
+  </main>
+  <footer>
+    <p>Created by Yin Maung</p>
+  </footer>
+  <script>
+    function navigate(page) {
+      document.querySelectorAll(".page").forEach((section) => {
+        section.classList.add("hidden");
+      });
+      document.getElementById(page).classList.remove("hidden");
+    }
+  </script>
 </body>
 </html>
+
